@@ -1,0 +1,56 @@
+#navigation
+    z-index: 99
+    position: fixed
+    height: fit-content
+    max-height: 10rem
+    height: 8vh
+    width: 100%
+    background-color: $color-primary
+    padding: 0.7% 3%
+
+    h2
+        position: absolute
+        font-size: 2.2rem
+        &::after
+            content: ''
+            position: absolute
+            bottom: 0
+            left: 0
+            width: 0
+            height: 3px
+            background-color: $color-accent-light
+            transition: width 0.3s ease-out
+        &:hover::after
+            width: 100%
+
+    nav
+        display: flex
+        justify-content: right
+
+    li
+        list-style: none
+        display: inline-block
+        text-align: center
+        padding-left: 4vw
+        font-size: 1.7rem
+        padding-top: .5rem
+
+    a
+        text-decoration: none
+        color: $color-white
+
+    p
+        position: relative
+        padding-bottom: 5px
+        text-decoration: none
+        &::after
+            content: ''
+            position: absolute
+            bottom: 0
+            left: 0
+            width: 0
+            height: 3px
+            background-color: $color-accent-light
+            transition: width 0.3s ease-out
+        &:hover::after
+            width: 100%

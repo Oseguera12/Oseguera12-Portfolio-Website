@@ -1,0 +1,34 @@
+.loader-container
+    position: fixed
+    inset: 0
+    background-color: #000000
+    z-index: 999
+    display: grid
+    place-content: center
+    height: 100vh
+    width: 100vw
+    top: 0
+    left: 0
+
+.loader-container
+    animation: load-out 4s
+    animation-fill-mode: forwards
+
+svg
+    width: 30rem
+    font-weight: 700
+    letter-spacing: -6px
+
+
+svg text
+    font-size: 15rem
+    stroke: 2px
+
+svg text.text-body
+    stroke: var(--accent-color)
+    animation: 1.5s infinite alternate animate-stroke
+
+svg text.dot
+    fill: var(--accent-color)
+    stroke: var(--accent-color)
+    animation: 2s infinite alternate animate-dot

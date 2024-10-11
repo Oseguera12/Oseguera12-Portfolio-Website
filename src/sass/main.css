@@ -1,0 +1,269 @@
+@keyframes animate-stroke {
+  0% {
+    fill: transparent;
+    stroke: #7657C3;
+    stroke-width: 5px;
+    stroke-dashoffset: 25%;
+    stroke-dasharray: 0 32%;
+  }
+  50% {
+    fill: transparent;
+    fill: #7657C3;
+    stroke-width: 5px;
+  }
+  80%, 100% {
+    fill: #7657C3;
+    stroke: transparent;
+    stroke-width: 0;
+    stroke-dashoffset: -25%;
+    stroke-dasharray: 32% 0;
+  }
+}
+@keyframes load-out {
+  0% {
+    top: 0;
+    opacity: 1;
+  }
+  80% {
+    top: 0;
+    opacity: 1;
+  }
+  100% {
+    top: 0;
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+  }
+}
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  background-color: #08080E;
+  overflow: scroll;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  font-size: 62.5%;
+}
+@media only screen and (max-width: 75em) {
+  html {
+    font-size: 56.25%;
+  }
+}
+@media only screen and (max-width: 56.25em) {
+  html {
+    font-size: 50%;
+  }
+}
+@media only screen and (min-width: 112.5em) {
+  html {
+    font-size: 75%;
+  }
+}
+
+body {
+  box-sizing: border-box;
+}
+@media only screen and (max-width: 56.25em) {
+  body {
+    padding: 0;
+  }
+}
+
+canvas {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  background: transparent;
+}
+
+body {
+  font-family: "Onest", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.7;
+  color: #fff;
+}
+
+.loader-container {
+  position: fixed;
+  inset: 0;
+  background-color: #000000;
+  z-index: 999;
+  display: grid;
+  place-content: center;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+}
+
+.loader-container {
+  animation: load-out 4s;
+  animation-fill-mode: forwards;
+}
+
+svg {
+  width: 30rem;
+  font-weight: 700;
+  letter-spacing: -6px;
+}
+
+svg text {
+  font-size: 15rem;
+  stroke: 2px;
+}
+
+svg text.text-body {
+  stroke: var(--accent-color);
+  animation: 1.5s infinite alternate animate-stroke;
+}
+
+svg text.dot {
+  fill: var(--accent-color);
+  stroke: var(--accent-color);
+  animation: 2s infinite alternate animate-dot;
+}
+
+footer {
+  background-color: #000;
+  height: 20vh;
+}
+
+#navigation {
+  z-index: 99;
+  position: fixed;
+  height: -moz-fit-content;
+  height: fit-content;
+  max-height: 10rem;
+  height: 8vh;
+  width: 100%;
+  background-color: #08080E;
+  padding: 0.7% 3%;
+}
+#navigation h2 {
+  position: absolute;
+  font-size: 2.2rem;
+}
+#navigation h2::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background-color: #7657C3;
+  transition: width 0.3s ease-out;
+}
+#navigation h2:hover::after {
+  width: 100%;
+}
+#navigation nav {
+  display: flex;
+  justify-content: right;
+}
+#navigation li {
+  list-style: none;
+  display: inline-block;
+  text-align: center;
+  padding-left: 4vw;
+  font-size: 1.7rem;
+  padding-top: 0.5rem;
+}
+#navigation a {
+  text-decoration: none;
+  color: #fff;
+}
+#navigation p {
+  position: relative;
+  padding-bottom: 5px;
+  text-decoration: none;
+}
+#navigation p::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background-color: #7657C3;
+  transition: width 0.3s ease-out;
+}
+#navigation p:hover::after {
+  width: 100%;
+}
+
+/* Home Section --------------------------------------*/
+#home {
+  height: 100vh;
+  background-size: cover;
+  text-align: right;
+}
+
+#home h1 {
+  font-size: 16rem;
+  font-weight: 400;
+  letter-spacing: -1rem;
+  padding-top: 20vh;
+  padding-right: 3%;
+  mix-blend-mode: difference;
+  line-height: 16rem;
+}
+
+/* Projects Section ----------------------------------*/
+#projects {
+  height: 100vh;
+  background-color: #08080E;
+  display: grid;
+  place-content: center;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: flex;
+  justify-content: center;
+}
+
+#projects img {
+  max-height: 40rem;
+  border-bottom-width: 1px;
+  border-color: rgb(119, 119, 119);
+  border-left-width: 0px;
+  border-right-width: 0px;
+  border-style: solid;
+  border-top-width: 1px;
+}
+
+#projects p {
+  font-size: 2rem;
+}
+
+#projects .project-category {
+  font-size: 1.5rem;
+  color: #717171;
+}
+
+/* Expertise Section ---------------------------------*/
+#expertise {
+  height: 100vh;
+  background-color: rgb(170, 26, 158);
+}
+
+/* Contact Section -----------------------------------*/
+#contact {
+  height: 100vh;
+  background-color: rgb(42, 126, 204);
+}/*# sourceMappingURL=main.css.map */
